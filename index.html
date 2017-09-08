@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head><!-- Header -->
+<meta name="Resource-type" content="Document">
+<meta name="Revisit-after" content="30 days">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE", content="chrome=1"/>
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, user-scalable=0, width=device-width">
+<meta name="author" content="ZeroDot1"/>
+<meta name="publisher" content="ZeroDot1"/>
+<meta name="description" content="User Agent Tester"/>
+<meta name="keywords" content="Browser, mellowplayer, BETA, testing"/>
+<link href="http://basic1.moy.su/CSS/schnuffel-player-style.css" rel="stylesheet" type="text/css" media="screen"/>
+<meta name="language" content="en" />
+<link rel='icon' href='http://basic1.moy.su/favicon.ico' type='image/x-icon'/>
+<link rel='shortcut icon' href='http://basic1.moy.su/favicon.ico' type='image/x-icon'/>
+<title>User Agent tester site</title><!-- end #header -->
+</head>
+<body style="overflow: auto" onload="startTime()">
+<div align="center">
+  <p><strong>Welcome to the User Agent tester site!</strong></p>
+<br />
+<script type="text/javascript">
+window.setTimeout('location.href="http://basic1.moy.su/UAT/"', 519998);
+</script>
+<script type="text/javascript">
+document.write("Vendor: " + navigator.vendor + "<br>" + "OS: " + navigator.platform + "<br>" + "Name: " + navigator.appName + "<br>" + "User-Agent: " + navigator.userAgent + "<br>" + "Languages: " + navigator.languages + "<br>");
+document.write("Location - Protocol: " + window.location.protocol + "<br>" + "Location - Host: "+ window.location.host+ "<br>" + "Referrer:  " + parent.document.referrer + "<br>");
+var OSName="Unknown OS";
+if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+if (navigator.appVersion.indexOf("Mac")!=-1) OSName="macOS";
+if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
+document.write('Your OS is: ' + OSName);
+</script>
+<br />
+<script type="text/javascript">
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+<span>Time: </span> <div id="txt"></div>
+<br />
+<br />
+<a href="https://github.com/ColinDuquesnoy/MellowPlayer">MellowPlayer on Github</a>
+<br />
+<a href="http://basic1.moy.su/">This page was created by ZeroDot1</a>
+</div>
+<div>
+  <br />
+  <br />
+  <br />
+  <!-- TODO Footer -->
+</body>
+</html>
