@@ -160,9 +160,22 @@
         </tr>
         <tr>
           <td>navigator.geolocation = </td>
-          <td>
+          <td id="Location" ><button onclick="getLocation()">Show the location</button>
             <script type="text/javascript">
-              document.write(navigator.geolocation);
+              var x = document.getElementById("Location");
+
+              function getLocation() {
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                  x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+              }
+
+              function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude +
+                  "<br>Longitude: " + position.coords.longitude;
+              }
             </script>
           </td>
         </tr>
@@ -380,26 +393,26 @@
           <td>navigator.connection = </td>
           <td>
             <script type="text/javascript">
-            function logConnectionInfo() {
-              var properties = [
-                'type',
-                'effectiveType',
-                'downlinkMax',
-                'downlink',
-                'rtt'
-              ];
+              function logConnectionInfo() {
+                var properties = [
+                  'type',
+                  'effectiveType',
+                  'downlinkMax',
+                  'downlink',
+                  'rtt'
+                ];
 
-              document.write('Current Connection Status:');
-              properties.forEach(function(property) {
-                document.write('  ' + property + ': ' +
-                  (navigator.connection[property] || ' [unknown]'));
-              });
-            }
+                document.write('Current Connection Status:');
+                properties.forEach(function(property) {
+                  document.write('  ' + property + ': ' +
+                    (navigator.connection[property] || ' [unknown]'));
+                });
+              }
 
-            // Log the connection info once at startup.
-            logConnectionInfo();
-            // Log the new connection info whenever it changes.
-            navigator.connection.addEventListener('change', logConnectionInfo);
+              // Log the connection info once at startup.
+              logConnectionInfo();
+              // Log the new connection info whenever it changes.
+              navigator.connection.addEventListener('change', logConnectionInfo);
             </script>
           </td>
         </tr>
