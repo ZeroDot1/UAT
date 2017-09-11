@@ -377,23 +377,29 @@
           </td>
         </tr>
         <tr>
-          <td>navigator.connection.type = </td>
+          <td>navigator.connection = </td>
           <td>
             <script type="text/javascript">
-              function checkConnection() {
-                var networkState = navigator.connection.type;
-                var states = {};
-                states[Connection.UNKNOWN] = 'Unknown connection';
-                states[Connection.ETHERNET] = 'Ethernet connection';
-                states[Connection.WIFI] = 'WiFi connection';
-                states[Connection.CELL_2G] = 'Cell 2G connection';
-                states[Connection.CELL_3G] = 'Cell 3G connection';
-                states[Connection.CELL_4G] = 'Cell 4G connection';
-                states[Connection.CELL] = 'Cell generic connection';
-                states[Connection.NONE] = 'No network connection';
-                document.write('Connection type: ' + states[networkState]);
-              }
-              checkConnection();
+            function logConnectionInfo() {
+              var properties = [
+                'type',
+                'effectiveType',
+                'downlinkMax',
+                'downlink',
+                'rtt'
+              ];
+
+              document.write('Current Connection Status:');
+              properties.forEach(function(property) {
+                document.write('  ' + property + ': ' +
+                  (navigator.connection[property] || ' [unknown]'));
+              });
+            }
+
+            // Log the connection info once at startup.
+            logConnectionInfo();
+            // Log the new connection info whenever it changes.
+            navigator.connection.addEventListener('change', logConnectionInfo);
             </script>
           </td>
         </tr>
