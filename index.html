@@ -17,8 +17,6 @@
   <link rel='dns-prefetch' href='//basic1.moy.su' />
   <link rel='dns-prefetch' href='//github.com' />
   <link rel='dns-prefetch' href='//github.io' />
-  <link rel="prefetch" href="js/Time.js" />
-  <link rel="prefetch" href="css/goldenhour.css" />
   <link href="css/goldenhour.css" rel="stylesheet" type="text/css" media="screen" />
   <meta name="language" content="en" />
   <link rel='icon' href='http://basic1.moy.su/favicon.ico' type='image/x-icon' />
@@ -180,7 +178,22 @@
           <td>navigator.plugins = </td>
           <td>
             <script type="text/javascript">
-              document.write(navigator.plugins);
+              var plugLength = navigator.plugins.length
+              for (i = 0; i < plugLength; i++) {
+                document.write(navigator.plugins[i].name + "<br />");
+              }
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.javaEnabled = </td>
+          <td>
+            <script type="text/javascript">
+              var hasJava = navigator.javaEnabled()
+              if (hasJava == true)
+                document.write("You have Java enabled");
+              else
+                document.write("No Java?");
             </script>
           </td>
         </tr>
@@ -188,7 +201,15 @@
           <td>navigator.mimeTypes = </td>
           <td>
             <script type="text/javascript">
-              document.write(navigator.mimeTypes);
+              document.write(navigator.mimeTypes.length);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.mimeTypes.description = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.mimeTypes.description + "<br />");
             </script>
           </td>
         </tr>
@@ -345,6 +366,44 @@
           </td>
         </tr>
         <tr>
+          <td>navigator.connection.downlinkMax = </td>
+          <td>
+            <script type="text/javascript">
+              if (navigator.connection.downlinkMax) {
+                downMax = navigator.connection.downlinkMax;
+                document.write(downMax);
+              }
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.connection = </td>
+          <td>
+            <script type="text/javascript">
+            function logConnectionInfo() {
+              var properties = [
+                'type',
+                'effectiveType',
+                'downlinkMax',
+                'downlink',
+                'rtt'
+              ];
+
+              document.write('Current Connection Status:');
+              properties.forEach(function(property) {
+                document.write('  ' + property + ': ' +
+                  (navigator.connection[property] || ' [unknown]'));
+              });
+            }
+
+            // Log the connection info once at startup.
+            logConnectionInfo();
+            // Log the new connection info whenever it changes.
+            navigator.connection.addEventListener('change', logConnectionInfo);
+            </script>
+          </td>
+        </tr>
+        <tr>
           <td>parent.document.referrer = </td>
           <td>
             <script type="text/javascript">
@@ -365,6 +424,38 @@
           <td>
             <script type="text/javascript">
               document.write(window.location.protocol);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>window.location.hostname = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(window.location.hostname);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>window.location.port = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(window.location.port);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>window.location.pathname = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(window.location.pathname);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>window.location.search = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(window.location.search);
             </script>
           </td>
         </tr>
