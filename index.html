@@ -178,7 +178,22 @@
           <td>navigator.plugins = </td>
           <td>
             <script type="text/javascript">
-              document.write(navigator.plugins);
+              var plugLength = navigator.plugins.length
+              for (i = 0; i < plugLength; i++) {
+                document.write(navigator.plugins[i].name + "<br />");
+              }
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.javaEnabled = </td>
+          <td>
+            <script type="text/javascript">
+              var hasJava = navigator.javaEnabled()
+              if (hasJava == true)
+                document.write("You have Java enabled");
+              else
+                document.write("No Java?");
             </script>
           </td>
         </tr>
@@ -186,7 +201,15 @@
           <td>navigator.mimeTypes = </td>
           <td>
             <script type="text/javascript">
-              document.write(navigator.mimeTypes);
+              document.write(navigator.mimeTypes.length);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.mimeTypes.description = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.mimeTypes.description + "<br />");
             </script>
           </td>
         </tr>
@@ -343,6 +366,38 @@
           </td>
         </tr>
         <tr>
+          <td>navigator.connection.downlinkMax = </td>
+          <td>
+            <script type="text/javascript">
+              if (navigator.connection.downlinkMax) {
+                downMax = navigator.connection.downlinkMax;
+                document.write(downMax);
+              }
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.connection.type = </td>
+          <td>
+            <script type="text/javascript">
+              function checkConnection() {
+                var networkState = navigator.connection.type;
+                var states = {};
+                states[Connection.UNKNOWN] = 'Unknown connection';
+                states[Connection.ETHERNET] = 'Ethernet connection';
+                states[Connection.WIFI] = 'WiFi connection';
+                states[Connection.CELL_2G] = 'Cell 2G connection';
+                states[Connection.CELL_3G] = 'Cell 3G connection';
+                states[Connection.CELL_4G] = 'Cell 4G connection';
+                states[Connection.CELL] = 'Cell generic connection';
+                states[Connection.NONE] = 'No network connection';
+                document.write('Connection type: ' + states[networkState]);
+              }
+              checkConnection();
+            </script>
+          </td>
+        </tr>
+        <tr>
           <td>parent.document.referrer = </td>
           <td>
             <script type="text/javascript">
@@ -363,6 +418,38 @@
           <td>
             <script type="text/javascript">
               document.write(window.location.protocol);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>window.location.hostname = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(window.location.hostname);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>window.location.port = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(window.location.port);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>window.location.pathname = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(window.location.pathname);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>window.location.search = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(window.location.search);
             </script>
           </td>
         </tr>
