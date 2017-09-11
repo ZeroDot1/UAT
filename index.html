@@ -160,7 +160,7 @@
         </tr>
         <tr>
           <td>navigator.geolocation = </td>
-          <td id="Location" ><button onclick="getLocation()">Show the location</button>
+          <td id="Location"><button onclick="getLocation()">Show the location</button>
             <script type="text/javascript">
               var x = document.getElementById("Location");
 
@@ -175,6 +175,23 @@
               function showPosition(position) {
                 x.innerHTML = "Latitude: " + position.coords.latitude +
                   "<br>Longitude: " + position.coords.longitude;
+              }
+
+              function showError(error) {
+                switch (error.code) {
+                  case error.PERMISSION_DENIED:
+                    x.innerHTML = "User denied the request for Geolocation."
+                    break;
+                  case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "Location information is unavailable."
+                    break;
+                  case error.TIMEOUT:
+                    x.innerHTML = "The request to get user location timed out."
+                    break;
+                  case error.UNKNOWN_ERROR:
+                    x.innerHTML = "An unknown error occurred."
+                    break;
+                }
               }
             </script>
           </td>
@@ -339,6 +356,22 @@
           </td>
         </tr>
         <tr>
+          <td>navigator.mozGetUserMedia = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.mozGetUserMedia);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.taintEnabled = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.taintEnabled);
+            </script>
+          </td>
+        </tr>
+        <tr>
           <td>navigator.registerProtocolHandler = </td>
           <td>
             <script type="text/javascript">
@@ -367,6 +400,14 @@
           <td>
             <script type="text/javascript">
               document.write(navigator.storage);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.usb = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.usb);
             </script>
           </td>
         </tr>
