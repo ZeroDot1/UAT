@@ -1,70 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
-<head><!-- Header -->
-<meta name="Resource-type" content="Document">
-<meta name="Revisit-after" content="30 days">
-<meta name="robots" content="index, follow">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta http-equiv="expires" content="0">
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE", content="chrome=1"/>
-<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, user-scalable=0, width=device-width">
-<meta name="author" content="ZeroDot1"/>
-<meta name="publisher" content="ZeroDot1"/>
-<meta name="description" content="User Agent Tester"/>
-<meta name="keywords" content="Browser, mellowplayer, BETA, testing"/>
-<link href="http://basic1.moy.su/CSS/schnuffel-player-style.css" rel="stylesheet" type="text/css" media="screen"/>
-<meta name="language" content="en" />
-<link rel='icon' href='http://basic1.moy.su/favicon.ico' type='image/x-icon'/>
-<link rel='shortcut icon' href='http://basic1.moy.su/favicon.ico' type='image/x-icon'/>
-<title>User Agent tester site</title><!-- end #header -->
+
+<head>
+  <!-- Header -->
+  <meta name="Resource-type" content="Document">
+  <meta name="Revisit-after" content="7 days">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" , content="chrome=1" />
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, user-scalable=0, width=device-width">
+  <meta name="author" content="ZeroDot1" />
+  <meta name="publisher" content="ZeroDot1" />
+  <meta name="description" content="A User Agent Tester" />
+  <meta name="keywords" content="Browser, Chrome, BETA, linux, testing" />
+  <link rel='dns-prefetch' href='//basic1.moy.su' />
+  <link rel='dns-prefetch' href='//github.com' />
+  <link rel='dns-prefetch' href='//github.io' />
+  <link rel="prefetch" href="js/Time.js" />
+  <link rel="prefetch" href="css/goldenhour.css" />
+  <link href="css/goldenhour.css" rel="stylesheet" type="text/css" media="screen" />
+  <meta name="language" content="en" />
+  <link rel='icon' href='http://basic1.moy.su/favicon.ico' type='image/x-icon' />
+  <link rel='shortcut icon' href='http://basic1.moy.su/favicon.ico' type='image/x-icon' />
+  <script type="text/javascript" src="js/Time.js"></script>
+  <title>User Agent tester site</title>
+  <!-- end #header -->
 </head>
+
 <body style="overflow: auto" onload="startTime()">
-<div align="center">
-  <p><strong>Welcome to the User Agent tester site!</strong></p>
-<br />
-<script type="text/javascript">
-window.setTimeout('location.href="http://basic1.moy.su/UAT/"', 519998);
-</script>
-<script type="text/javascript">
-document.write("Vendor: " + navigator.vendor + "<br>" + "OS: " + navigator.platform + "<br>" + "Name: " + navigator.appName + "<br>" + "User-Agent: " + navigator.userAgent + "<br>" + "Languages: " + navigator.languages + "<br>");
-document.write("Location - Protocol: " + window.location.protocol + "<br>" + "Location - Host: "+ window.location.host+ "<br>" + "Referrer:  " + parent.document.referrer + "<br>");
-var OSName="Unknown OS";
-if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
-if (navigator.appVersion.indexOf("Mac")!=-1) OSName="macOS";
-if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
-if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
-document.write('Your OS is: ' + OSName);
-</script>
-<br />
-<script type="text/javascript">
-function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('txt').innerHTML =
-    h + ":" + m + ":" + s;
-    var t = setTimeout(startTime, 500);
-}
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-}
-</script>
-<span>Time: </span> <div id="txt"></div>
-<br />
-<br />
-<a href="https://github.com/ColinDuquesnoy/MellowPlayer">MellowPlayer on Github</a>
-<br />
-<a href="http://basic1.moy.su/">This page was created by ZeroDot1</a>
-</div>
-<div>
+  <div align="center">
+    <h1><strong style="text-shadow: 0 0 0.2em #8877FF, 0 0 0.2em #8877FF, 0 0 0.2em #8877FF; font-weight: bold;">Welcome to the User Agent tester site!</strong></h1>
+    <br />
+    <table class="tg" align="center" border="1" cellpadding="1" cellspacing="1" style="width:800px">
+      <tbody>
+        <tr>
+          <th class="tg-yw4l" style="color:red; font-weight:bold;">Navigator</th>
+          <th class="tg-yw4l" style="color:red; font-weight:bold;">Info & <span>Time: </span>
+            <div id="txt"></div>
+          </th>
+        </tr>
+        <tr>
+          <td>navigator.vendorSub = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.vendorSub);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.vendor = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.vendor);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.maxTouchPoints = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.maxTouchPoints);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.hardwareConcurrency</td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.hardwareConcurrency);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.cookieEnabled = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.cookieEnabled);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.appCodeName = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.appCodeName);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.appName = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.appName);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.appVersion = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.appVersion);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.platform = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.platform);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.product = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.product);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.userAgent = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.userAgent);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.language = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.language);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.languages = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.languages);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.onLine = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.onLine);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.doNotTrack = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.doNotTrack);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.geolocation = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.geolocation);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.mediaDevices = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.mediaDevices);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.plugins = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.plugins);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.mimeTypes = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.mimeTypes);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.webkitTemporaryStorage = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.webkitTemporaryStorage);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.webkitPersistentStorage = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.webkitPersistentStorage);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.serviceWorker = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.serviceWorker);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.getBattery = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.getBattery);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.sendBeacon = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.sendBeacon);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.getGamepads = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.getGamepads);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.webkitGetUserMedia = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.webkitGetUserMedia);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.javaEnabled = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.javaEnabled);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.vibrate = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.vibrate);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.requestMIDIAccess = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.requestMIDIAccess);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.budget = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.budget);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.permissions = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.permissions);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.presentation = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.presentation);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.getUserMedia = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.getUserMedia);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.registerProtocolHandler = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.registerProtocolHandler);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.unregisterProtocolHandler = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.unregisterProtocolHandler);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.credentials = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.credentials);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.storage = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.storage);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>navigator.requestMediaKeySystemAccess = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(navigator.requestMediaKeySystemAccess);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>parent.document.referrer = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(parent.document.referrer);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>window.location.host = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(window.location.host);
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td>window.location.protocol = </td>
+          <td>
+            <script type="text/javascript">
+              document.write(window.location.protocol);
+            </script>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+  </div>
   <br />
   <br />
   <br />
-  <!-- TODO Footer -->
+  <footer align="center">
+    <a href="http://basic1.moy.su/" target="_blank" style="text-shadow: 0 0 0.2em #8877FF, 0 0 0.2em #8877FF, 0 0 0.2em #8877FF; font-weight: bold;">Created 2017 by ZeroDot1</a>
+    <p style="text-shadow: 0 0 0.2em #8877FF, 0 0 0.2em #8877FF, 0 0 0.2em #8877FF; font-weight: bold;">Last Update: 11.09.2017 13:16</p>
+    <p style="text-shadow: 0 0 0.2em #8877FF, 0 0 0.2em #8877FF, 0 0 0.2em #8877FF; font-weight: bold;">______________________________________________________</p>
+    <br />
+  </footer>
 </body>
+
 </html>
