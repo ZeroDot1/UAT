@@ -19,11 +19,11 @@ a[href^="#top"]:before {
 }
 
 html {
-  background: #603813;
+  background: #5f81d4;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #603813, #b29f94);
+  background: -webkit-linear-gradient(to bottom, #5f81d4, #ffc107);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #603813, #b29f94);
+  background: linear-gradient(to bottom, #5f81d4, #ffc107);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -177,7 +177,7 @@ a {
   border-width: 3, 5px;
   overflow: hidden;
   word-break: normal;
-  border-color: #603813;
+  border-color: #ffc107;
   color: #669;
   background-color: #e8edff;
   font-weight: bold;
@@ -201,7 +201,7 @@ a {
   border-width: 3, 5px;
   overflow: hidden;
   word-break: normal;
-  border-color: #603813;
+  border-color: #ffc107;
   color: #DC143C;
   background-color: #b9c9fe;
   box-shadow: inset 0px 0px 10px 5px transparent;
