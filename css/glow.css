@@ -1,0 +1,17 @@
+.glowyellow {
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffc107, 0 0 70px #ffc107, 0 0 80px #ffc107, 0 0 100px #ffc107, 0 0 150px #ffc107;
+  font-weight: bold;
+}
+.glowyellow:hover {
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffc107, 0 0 70px #ffc107, 0 0 80px #ffc107, 0 0 100px #ffc107, 0 0 150px #ffc107;
+  font-weight: bold;
+  color: #5f81d4;
+}
+.glowblue {
+  text-shadow: 0 0 10px #5f81d4, 0 0 20px #5f81d4, 0 0 30px #5f81d4, 0 0 40px #5f81d4, 0 0 70px #5f81d4, 0 0 80px #5f81d4, 0 0 100px #5f81d4, 0 0 150px #5f81d4;
+  font-weight: bold;
+}
+.tg th {
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffc107, 0 0 70px #ffc107, 0 0 80px #ffc107, 0 0 100px #ffc107, 0 0 150px #ffc107;
+  font-weight: bold;
+}

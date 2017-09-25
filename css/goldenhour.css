@@ -28,14 +28,14 @@ html {
 }
 
 img {
-  box-shadow: inset 0px 0px 10px 5px #3D7511;
-  -webkit-box-shadow: inset 0px 0px 10px 5px #3D7511;
-  -moz-box-shadow: inset 0px 0px 10px 5px #3D7511;
-  -o-box-shadow: inset 0px 0px 10px 5px #3D7511;
-  box-shadow: 1px 1px 14px 3px #81A162;
-  -webkit-box-shadow: 1px 1px 14px 3px #81A162;
-  -moz-box-shadow: 1px 1px 14px 3px #81A162;
-  -o-box-shadow: 1px 1px 14px 3px #81A162;
+  box-shadow: inset 0px 0px 10px 5px #ffc107;
+  -webkit-box-shadow: inset 0px 0px 10px 5px #ffc107;
+  -moz-box-shadow: inset 0px 0px 10px 5px #ffc107;
+  -o-box-shadow: inset 0px 0px 10px 5px #ffc107;
+  box-shadow: 1px 1px 14px 3px #ffc107;
+  -webkit-box-shadow: 1px 1px 14px 3px #ffc107;
+  -moz-box-shadow: 1px 1px 14px 3px #ffc107;
+  -o-box-shadow: 1px 1px 14px 3px #ffc107;
   border-radius: 8px;
 }
 
