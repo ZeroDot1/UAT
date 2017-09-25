@@ -18,6 +18,10 @@ a[href^="#top"]:before {
   transform: rotate(-90deg);
 }
 
+body {
+  margin: 0;
+}
+
 html {
   background: #5f81d4;
   /* fallback for old browsers */
@@ -28,6 +32,9 @@ html {
 }
 
 img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
   box-shadow: inset 0px 0px 10px 5px #ffc107;
   -webkit-box-shadow: inset 0px 0px 10px 5px #ffc107;
   -moz-box-shadow: inset 0px 0px 10px 5px #ffc107;
