@@ -272,13 +272,21 @@
             </script>
           </td>
         </tr>
-        <tr>
-          <td>navigator.getBattery = </td>
-          <td>
-            <script type="text/javascript">
-              document.write(navigator.getBattery);
-            </script>
-          </td>
+        <td>navigator.getBattery = <br>ℹ️ Discharging/Charging</td>
+        <td>
+          <script type="text/javascript">
+            navigator.getBattery().then((battery) => {
+
+              battery.ondischargingtimechange = (event) => {
+                document.write(`Discharging : `, event.target.level)
+              };
+
+              battery.onchargingtimechange = (event) => {
+                document.write(`Charging : `, event.target.level);
+              };
+            });
+          </script>
+        </td>
         </tr>
         <tr>
           <td>navigator.sendBeacon = </td>
